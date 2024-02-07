@@ -1,0 +1,53 @@
+<!-- Welcome to my project : HCJ - Editor by Hussain, 
+
+Contact : webyright@gmail.com
+Credits : Hussain Abbas
+Code Copy : I would not mind :) 
+
+ -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HCJ - Editor By Hussain $copy;</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+
+  <!-- This is the code playground, where you can play with your code, Thanks me later ;) -->
+
+  <div class="code-area">
+  <textarea id="htmlCode" placeholder="Hyper text markup language "
+            oninput="showPreview()"></textarea>
+  <textarea id="cssCode" placeholder="cascyding style sheet "
+            oninput="showPreview()"></textarea>
+  <textarea id="jsCode" placeholder="JavaScript "
+            oninput="showPreview()"></textarea>
+
+
+</div>
+
+<!-- This is the preview window for the output -->
+
+<div class="preview-area">
+  <iframe id="preview-window"></iframe>
+</div>
+
+<!-- Javascript Starts here -->
+
+<script>
+function showPreview(){
+  var htmlCode = document.getElementById("htmlCode").value;
+  var cssCode = "<style>"+document.getElementById("cssCode").value+"</style>";
+  var jsCode = "<scri"+"pt>"+document.getElementById("jsCode").value+"</scri"+"pt>";
+  var frame = document.getElementById("preview-window").contentWindow.document;
+  frame.open();
+  frame.write(htmlCode+cssCode+jsCode);
+  frame.close();
+}
+</script>
+
+</body>
+</html>
